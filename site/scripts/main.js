@@ -4,32 +4,62 @@ const s = {
 }
 
 const els = {}
-const elNames = ['gifCanvas', 'line1', 'line2', 'line3', 'line4', 'line5']
+const elNames = [
+    'createTrigger',
+    'gifCanvas',
+    'line1',
+    'line2',
+    'line3',
+    'line4',
+    'line5',
+]
 
-const runIt = () => {
+const createIt = () => {
     console.log('Creating GIF')
 
     s.gif = new GIF({
         workers: 2,
         quality: 10,
         workerScript: 'scripts/gif.worker.js',
+        width: 480,
+        height: 320,
     })
 
     s.images.forEach((image) => {
-        s.gif.addFrame(image, { delay: 60 })
+        console.log('asdf')
+
+        const localCanvas = document.createElement('canvas')
+        localCanvas.width = 480
+        localCanvas.height = 320
+
+        const localContext = localCanvas.getContext('2d')
+
+        localContext.clearRect(0, 0, 480, 320)
+        localContext.drawImage(image, 0, 0)
+        localContext.font = 'bold 24px Arial'
+        localContext.fillStyle = `rgba(200, 200, 200, 0.8)`
+        localContext.fillRect(0, 250, 480, 100)
+        localContext.fillStyle = 'black'
+        localContext.fillText(els['line1'].value, 20, 24)
+        localContext.fillText(els['line2'].value, 20, 48)
+        localContext.fillText(els['line3'].value, 20, 72)
+        localContext.fillText(els['line4'].value, 20, 272)
+        localContext.font = 'bold 18px Arial'
+        localContext.fillText(els['line5'].value, 20, 302)
+
+        s.gif.addFrame(localCanvas, { delay: 60 })
     })
 
     s.gif.on('finished', function (blob) {
         window.open(URL.createObjectURL(blob))
     })
 
-    // s.gif.render()
+    s.gif.render()
 }
 
 const checkIt = () => {
     s.loaded++
     if (s.loaded === s.images.length) {
-        runIt()
         handleInput()
     }
 }
@@ -47,13 +77,6 @@ const handleInput = () => {
     s.context.fillText(els['line4'].value, 20, 272)
     s.context.font = 'bold 18px Arial'
     s.context.fillText(els['line5'].value, 20, 302)
-
-    // s.context.strokeStyle = 'white'
-    // s.context.strokeText(els['line1'].value, 20, 24)
-    // s.context.strokeText(els['line2'].value, 20, 48)
-    // s.context.strokeText(els['line3'].value, 20, 72)
-    // s.context.strokeText(els['line4'].value, 20, 272)
-    // s.context.strokeText(els['line5'].value, 20, 302)
 }
 
 const init = () => {
@@ -68,6 +91,7 @@ const init = () => {
     els['line3'].addEventListener('input', handleInput)
     els['line4'].addEventListener('input', handleInput)
     els['line5'].addEventListener('input', handleInput)
+    els['createTrigger'].addEventListener('click', createIt)
 
     s.context = els['gifCanvas'].getContext('2d')
 
