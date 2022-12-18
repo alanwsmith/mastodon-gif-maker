@@ -34,6 +34,19 @@
         <header></header>
         <main>
             <h1>Mastodon GIF Maker</h1>
+            <p>Hi there!</p>
+            <p>
+                I was disappointed to learn Twitter has started prohibiting
+                links to other social networks. I want to let me followers know
+                I've moved to Mastodon, but I don't want to run afoul of their
+                guidelines. So, I setup this GIF maker that will let me send the
+                message. You're welcome to use it too.
+            </p>
+            <p>
+                Enter your message then click &quot;Create it&quot; to do just
+                that. (And make sure to read the notes, this is brand new and
+                still a little clunky.)
+            </p>
 
             <canvas id="gifCanvas" width="480" height="320"></canvas>
 
@@ -58,7 +71,7 @@
                 type="text"
                 id="line3"
                 size="40"
-                value="so I'm using this GIF to let you know."
+                value="so I'm using this GIF to let you know"
             /><br />
 
             <label for="line4">Line 4</label>
@@ -77,24 +90,44 @@
                 value=""
                 placeholder=""
             /><br />
+            <p>
+                <button id="createTrigger">Create It</button> (Note: the image
+                is generated in a pop-up window which your browser will probably
+                block the first time. Give it permission and try again and it
+                should work)
+            </p>
+            <p>
+                Save the image from the pop-up window and then you can post it
+                on twitter. It'll look
+                <a
+                    href="https://twitter.com/TheIdOfAlan/status/1604571992849616903"
+                    >link this</a
+                >. (NOTE: you'll probably need to add the filename including
+                `.gif` when you save the file. I'm working to fix that.)
+            </p>
+            <br />
 
-            <button id="createTrigger">Create It</button>
+            <p>
+                This is a super basic first version. I'm still adding features
+                which you can see further below.
+            </p>
 
             <br />
             <br />
             <br />
             <h3>Launch Requirements</h3>
             <ul>
-                <li>Load frames onto canvas</li>
+                <li><strike>Load frames onto canvas</strike></li>
                 <li><strike>Message Text</strike></li>
                 <li><strike>Screen text to make it readable</strike></li>
                 <li><strike>Button to trigger generation</strike></li>
-                <li>Create Initial GIF</li>
-                <li>Add text about the pop-up blocker</li>
-                <li>Welcome message</li>
+                <li><strike>Create Initial GIF</strike></li>
+                <li><strike>Add text about the pop-up blocker</strike></li>
+                <li><strike>Welcome message</strike></li>
             </ul>
             <h3>Next Steps</h3>
             <ul>
+                <li>See about auto assigning a name for saving</li>
                 <li>Show more details about the pop-up blockers</li>
                 <li>Make image show up before text is added</li>
                 <li>More different GIF images</li>

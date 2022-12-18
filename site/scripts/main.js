@@ -44,7 +44,7 @@ const createIt = () => {
         localContext.fillText(els['line2'].value, 20, 48)
         localContext.fillText(els['line3'].value, 20, 72)
         localContext.fillText(els['line4'].value, 20, 272)
-        localContext.font = 'bold 18px Arial'
+        localContext.font = 'bold 17px Arial'
         localContext.fillText(els['line5'].value, 20, 302)
 
         s.gif.addFrame(localCanvas, { delay: 60 })
@@ -75,7 +75,7 @@ const handleInput = () => {
     s.context.fillText(els['line2'].value, 20, 48)
     s.context.fillText(els['line3'].value, 20, 72)
     s.context.fillText(els['line4'].value, 20, 272)
-    s.context.font = 'bold 18px Arial'
+    s.context.font = 'bold 17px Arial'
     s.context.fillText(els['line5'].value, 20, 302)
 }
 
