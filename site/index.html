@@ -31,17 +31,76 @@
         <script src="/scripts/main.js"></script>
     </head>
     <body>
-        <header>
-            <a href="https://www.alanwsmith.com/">alanwsmith.com</a> ~
-            <a href="https://links.alanwsmith.com">other sites</a> ~
-            <a href="https://podcast.alanwsmith.com/">podcast</a>
-        </header>
+        <header></header>
         <main>
             <h1>Mastodon GIF Maker</h1>
-            <canvas id="gifHolder" width="480" height="320" />
+            <canvas id="gifCanvas" width="480" height="320"></canvas>
+            <label for="line1">Line 1</label>
+            <input
+                type="text"
+                id="line1"
+                size="40"
+                value="I'm on Mastodon Now!"
+            /><br />
+            <label for="line2">Line 2</label>
+            <input
+                type="text"
+                id="line2"
+                size="40"
+                value="Twitter has forbidden links to Mastodon"
+            /><br />
+            <label for="line3">Line 3</label>
+            <input
+                type="text"
+                id="line3"
+                size="40"
+                value="so I'm using this GIF to let you know."
+            /><br />
+            <label for="line4">Line 4</label>
+            <input
+                type="text"
+                id="line4"
+                size="40"
+                value="You can find me at:"
+            /><br />
+            <label for="line5">Line 5</label>
+            <input
+                type="text"
+                id="line5"
+                size="40"
+                value=""
+                placeholder=""
+            /><br />
+            <br />
+            <br />
+            <br />
+            <h3>Launch Requirements</h3>
+            <ul>
+                <li>Load frames onto canvas</li>
+                <li><strike>Message Text</strike></li>
+                <li><strike>Screen text to make it readable</strike></li>
+                <li>Button to trigger generation</li>
+                <li>Create Initial GIF</li>
+            </ul>
+            <h3>Next Steps</h3>
+            <ul>
+                <li>Make image show up before text is added</li>
+                <li>More different GIF images</li>
+                <li>Wrapping text</li>
+                <li>Preload different texts (e.g. reminders)</li>
+                <li>Dynamic text sizing</li>
+                <li>Customized colors</li>
+                <li>Better text formatting</li>
+                <li>QR codes</li>
+                <li>Still images as well as GIFs</li>
+            </ul>
         </main>
         <footer>
             from <a href="https://hachyderm.io/@TheIdOfAlan">alan w. smith</a>
+            <br />
+            <a href="https://www.alanwsmith.com/">alanwsmith.com</a> ~
+            <a href="https://links.alanwsmith.com">other sites</a> ~
+            <a href="https://podcast.alanwsmith.com/">podcast</a>
         </footer>
     </body>
 </html>
