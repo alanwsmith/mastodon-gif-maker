@@ -1,0 +1,17 @@
+#!/bin/bash
+
+CROP_WIDTH=2126
+CROP_HEIGHT=1600
+CROP_LEFT=0
+CROP_DOWN=1060
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+DIR_NAME=${PWD##*/}
+OUTPUT_PATH="$SCRIPT_DIR/../../site/frames/$DIR_NAME/%d.jpg"
+
+echo $OUTPUT_PATH
+
+ffmpeg -i "source.mp4" \
+    -vf "crop=$CROP_WIDTH:$CROP_HEIGHT:$CROP_LEFT:$CROP_DOWN,scale=640:-2,fps=30" \
+    -y "$OUTPUT_PATH"
+
