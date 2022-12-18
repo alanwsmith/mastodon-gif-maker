@@ -35,6 +35,7 @@ const init = () => {
     s.gif = new GIF({
         workers: 2,
         quality: 10,
+        workerScript: 'scripts/gif.worker.js',
     })
 }
 
