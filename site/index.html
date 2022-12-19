@@ -8,9 +8,12 @@
         <meta property="og:title" content="Mastodon GIF Maker" />
         <meta
             property="og:description"
-            content="Let folks know your on Mastodon with a GIF since text will get you banned"
+            content="Let folks know you're on Mastodon with a presonalized GIF"
         />
-        <meta property="og:image" content="" />
+        <meta
+            property="og:image"
+            content="https://mastodon-gif-maker.alanwsmith.com/images/og-image-main.jpg"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site:id" content="@TheIdOfAlan" />
         <meta name="twitter:creator" content="@TheIdOfAlan" />
@@ -40,31 +43,27 @@
                 I was disappointed to learn Twitter is prohibiting links to
                 other social networks. I want to let my followers know I've
                 moved to Mastodon, but I don't want to run afoul of their rules.
-                So, I setup this GIF maker that will let me send the message.
-                You're welcome to use it too.
-            </p>
-            <p>
-                I've provided some boilerplate text. You're welcome to use it,
-                change it up, or junk it completely and do your own thing. When
-                you've got the words right, click the &quot;Create it&quot;
-                button and it'll to do just that. (And make sure to read the
-                notes scattered around, I just built this today and it's still
-                clunky.)
+                So, I setup this GIF maker as a means of communication. You're
+                welcome to use it too.
             </p>
 
             <h4>Warning</h4>
             <p>
-                Based off the increasing frequency of account suspensions I
-                would not be surpised if the rules of engagement are changed
-                again to prohibit GIFs. I'm fine with that and am using this
-                with the idea that it could very well be the last thing I do on
-                Twitter. I'm fine with that. I want to make sure the people I've
-                connected with know where I've gone before I disappear
-                completely.
+                I wouldn't be surpised if the rules of engagement change again
+                to prohibit GIFs. I'm using this this with the full knowledge
+                that it may be the last thing I do on Twitter. I'm fine with
+                that. I want to make sure the people I've connected on the
+                platform know where I've gone before my ability to communicate
+                with them is taken away.
             </p>
             <p>Said another way: Use at your own risk</p>
 
             <h2>Make Your GIF</h2>
+
+            <p>
+                With all that in mind, here's the process for making an
+                &quot;I've move to Mastodon&quot; GIF
+            </p>
 
             <h4>1. Pick A Background GIF</h4>
 
@@ -178,19 +177,15 @@
 
             <h4>4. And Create Your GIF!</h4>
             <p>
-                <button id="createTrigger">Create It</button> (NOTE: the image
-                is generated in a pop-up window which your browser will probably
-                block the first time. Give it permission and try again and it
-                should work. NOTE: Also, it can take a few seconds to generate.)
+                <button id="createTrigger">Create It</button> (NOTE 1: It can
+                take a few seconds to generate - NOTE 2: The image is generated
+                in a pop-up window which your browser will probably block the
+                first time. Give it permission, try again and it should work. )
             </p>
             <p>
                 Save the image from the pop-up window and then you can post it
-                on twitter. It'll look
-                <a
-                    href="https://twitter.com/TheIdOfAlan/status/1604571992849616903"
-                    >link this</a
-                >. (NOTE: you'll probably need to add the filename including
-                `.gif` when you save the file. I'm working to fix that.)
+                on twitter. (NOTE 3: You might need to add the filename
+                including `.gif` at the end.)
             </p>
 
             <h4>Notes</h4>
@@ -236,8 +231,8 @@
                         >
                     </strike>
                 </li>
+                <li><strike>Add on Open Graph Image</strike></li>
                 <li>Make the preview animate</li>
-                <li>Add on Open Graph Image</li>
                 <li>Add note about gif.js library used</li>
                 <li>MORE GIF OPTIONS!</li>
                 <li>See about auto assigning a name for saving</li>
