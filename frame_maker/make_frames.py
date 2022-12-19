@@ -2,6 +2,7 @@
 
 import glob
 import os
+import subprocess
 import sys
 
 from pathlib import Path
@@ -17,17 +18,40 @@ videos = [video for video in glob.glob(f"{source_dir}/*.mp4")
 
 with open(config_path) as _config:
     config = load(_config.read(), SafeLoader)
-    print(config)
 
-def mkdirs():
+def make_dirs():
     for video in videos:
         basename = os.path.basename(video).split('.')[0]
         output_dir = os.path.join(output_root, basename)
         Path(output_dir).mkdir(exist_ok=True)
 
+def make_thumbnails():
+    for video in videos:
+        basename = os.path.basename(video).split('.')[0]
+        output_path = os.path.join(output_root, basename, "_thumbnail.jpg")
+        if basename in config['files']: 
+            d = config['files'][basename]
+            crop_string = f"crop={d['width']}:{d['height']}:{d['left']}:{d['down']}"
+            cmd = [
+                    "ffmpeg", 
+                    "-i", 
+                    video,
+                    "-vframes", 
+                    "1",
+                    '-vf', 
+                    crop_string,
+                    "-y",
+                    output_path
+                    ]
+            subprocess.run(cmd)
+
 
 if __name__ == "__main__":
-    mkdirs()
+    make_dirs()
+    make_thumbnails()
+
+from pprint import pprint
+pprint(config)
 
 
 
