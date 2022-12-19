@@ -126,7 +126,7 @@ const handleInput = () => {
     s.context.fillText(els['line3'].value, 20, 72)
     s.context.fillText(els['line4'].value, 20, 272)
     s.context.font = 'bold 17px Arial'
-    s.context.fillText(els['line5'].value, 20, 302)
+    s.context.fillText(els['line5'].value, 80, 302)
 
     // // Texture // Skipping for preview
     // s.context.fillStyle = `rgba(255,255, 255, 0.02)`
@@ -168,7 +168,9 @@ const init = () => {
     els['line5'].addEventListener('input', handleInput)
     els['createTrigger'].addEventListener('click', createIt)
     els['claiton-conto-11489108'].addEventListener('click', handleImageClick)
-    els['river-elephant-elephant-bathing-elephant-in-river-3958529'].addEventListener('click', handleImageClick)
+    els[
+        'river-elephant-elephant-bathing-elephant-in-river-3958529'
+    ].addEventListener('click', handleImageClick)
     els['roman-odintsov-11760754'].addEventListener('click', handleImageClick)
     els['roman-odintsov-11760788'].addEventListener('click', handleImageClick)
     els['an-african-elephant-covered-in-mud-11760745'].addEventListener(
