@@ -63,3 +63,35 @@ files:
     left: 0
     down: 1310
     start: 0
+  a-flying-airplane-8242847:
+    alt: 'An airplane in flight with the pilot waving'
+    make: 'n'
+    width: 1036
+    height: 691
+    left: 0
+    down: 0
+    start: 0
+  time-lapse-video-of-an-island-during-sunrise-5167998:
+    alt: 'A timelaps looking over a curve of land on water with a blue sky'
+    make: 'n'
+    width: 1920
+    height: 1080
+    left: 0
+    down: 0
+    start: 0
+  silhouette-of-man-watching-sunset-4507081:
+    alt: 'A person on a bike backlit by a sunset'
+    make: 'n'
+    width: 1920
+    height: 1080
+    left: 0
+    down: 0
+    start: 0
+  man-wearing-hoodie-on-top-of-building-2791789:
+    alt: 'A man wearing a hoodie on top of a building. He punches up and the camera asends away from him on a drone'
+    make: 'y'
+    width: 2703
+    height: 1802
+    left: 1030
+    down: 20
+    start: 0
