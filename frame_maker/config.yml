@@ -89,9 +89,41 @@ files:
     start: 0
   man-wearing-hoodie-on-top-of-building-2791789:
     alt: 'A man wearing a hoodie on top of a building. He punches up and the camera asends away from him on a drone'
-    make: 'y'
+    make: 'n'
     width: 2703
     height: 1802
     left: 1030
     down: 20
+    start: 0
+  a-man-dancing-on-the-street-8929221:
+    alt: 'A man dancing on the street'
+    make: 'n'
+    width: 1176
+    height: 784
+    left: 280
+    down: 0
+    start: 0
+  woman-dancing-in-neon-glow-7198484:
+    alt: 'A woman dancing in neon glow'
+    make: 'n'
+    width: 2160
+    height: 1440
+    left: 0
+    down: 300
+    start: 0
+  woman-stretching-6980497:
+    alt: 'A woman stretching and wearing a mask'
+    make: 'n'
+    width: 2160
+    height: 1440
+    left: 0
+    down: 900
+    start: 0
+  woman-holding-skateboard-7935547:
+    alt: 'A woman holding a skateboard'
+    make: 'y'
+    width: 2268
+    height: 1512
+    left: 1310
+    down: 0
     start: 0
