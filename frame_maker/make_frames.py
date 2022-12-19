@@ -31,31 +31,52 @@ def make_thumbnails():
         output_path = os.path.join(output_root, basename, "_thumbnail.jpg")
         if basename in config['files']: 
             d = config['files'][basename]
-            crop_string = f"crop={d['width']}:{d['height']}:{d['left']}:{d['down']}"
+            # Don't crop thumbnails so you can use them to size
+            # the output frames
+            # crop_string = f"crop={d['width']}:{d['height']}:{d['left']}:{d['down']}"
             cmd = [
                     "ffmpeg", 
                     "-i", 
                     video,
                     "-vframes", 
                     "1",
-                    '-vf', 
-                    crop_string,
+                    # '-vf', 
+                    # crop_string,
                     "-y",
                     output_path
                     ]
             subprocess.run(cmd)
 
 
+def make_frames():
+    for video in videos:
+        basename = os.path.basename(video).split('.')[0]
+        output_path = os.path.join(output_root, basename, "%d.jpg")
+        if basename in config['files'] and config['files'][basename]['make'] == "y":
+            d = config['files'][basename]
+            filters = []
+            filters.append(f"crop={d['width']}:{d['height']}:{d['left']}:{d['down']}")
+            filters.append("scale=480:-2")
+            filters.append("fps=30")
+            cmd = [
+                    "ffmpeg", 
+                    "-ss",
+                    str(d['start']),
+                    "-t",
+                    "6",
+                    "-i", 
+                    video,
+                    '-vf', 
+                    ",".join(filters),
+                    "-y",
+                    output_path
+                    ]
+            subprocess.run(cmd)
+
 if __name__ == "__main__":
     make_dirs()
     make_thumbnails()
-
-from pprint import pprint
-pprint(config)
-
-
-
-
+    make_frames()
 
 
 
