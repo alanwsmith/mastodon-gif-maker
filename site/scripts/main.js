@@ -19,11 +19,11 @@ const elNames = [
     'line4',
     'line5',
 
-    'an-african-elephant-covered-in-mud-11760745',
-    'claiton-conto-11489108',
-    'river-elephant-elephant-bathing-elephant-in-river-3958529',
-    'roman-odintsov-11760754',
-    'roman-odintsov-11760788',
+    // 'an-african-elephant-covered-in-mud-11760745',
+    // 'claiton-conto-11489108',
+    // 'river-elephant-elephant-bathing-elephant-in-river-3958529',
+    // 'roman-odintsov-11760754',
+    // 'roman-odintsov-11760788',
 ]
 
 const imgNames = [
@@ -167,6 +167,11 @@ const init = () => {
     elNames.forEach((el) => {
         els[el] = document.getElementById(el)
     })
+
+    for (let file in data.files) {
+        els[file] = document.getElementById(file)
+        // console.log(file)
+    }
 
     els['line1'].addEventListener('input', handleInput)
     els['line2'].addEventListener('input', handleInput)

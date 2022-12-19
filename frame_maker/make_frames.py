@@ -1,5 +1,6 @@
 #!/usr/bin/env python3 
 
+import json
 import glob
 import os
 import subprocess
@@ -12,6 +13,7 @@ script_dir = sys.path[0]
 source_dir = os.path.abspath(os.path.join(script_dir, "..", "videos"))
 output_root = os.path.abspath(os.path.join(script_dir, "..", "site", "frames"))
 config_path = os.path.join(script_dir, "config.yml")
+data_file_path = os.path.abspath(os.path.join(script_dir, "..", "site", "scripts", "data.js"))
 
 videos = [video for video in glob.glob(f"{source_dir}/*.mp4") 
           if Path(video).is_file()]
@@ -101,11 +103,21 @@ def make_preview_gifs():
                     ]
             subprocess.run(cmd)
 
+def build_data_file():
+    content = []
+    content.append('''const data = JSON.parse(`''')
+    content.append(json.dumps(config, sort_keys=True, indent=2))
+    content.append('`)')
+
+    with open(data_file_path, "w") as _data:
+        _data.write("".join(content))
+
 
 if __name__ == "__main__":
     make_dirs()
     make_thumbnails()
     make_frames()
     make_preview_gifs()
+    build_data_file()
 
 
