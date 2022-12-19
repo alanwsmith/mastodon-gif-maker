@@ -34,24 +34,41 @@ const createIt = () => {
         height: 320,
     })
 
-    s.images.forEach((image) => {
-        console.log('asdf')
+    // Set the texture pattern once
 
+    // // Texture // Skipping because I don't like the way this version looks
+    // const texture = []
+    // for (let nx = 0; nx < 480; nx += 3) {
+    //     const row = []
+    //     for (let ny = 0; ny < 320; ny += 3) {
+    //         const theCheck = Math.random()
+    //         if (theCheck > 0.4) {
+    //             row.push(true)
+    //         } else {
+    //             row.push(false)
+    //         }
+    //     }
+    //     texture.push(row)
+    // }
+
+    s.images.forEach((image) => {
         const localCanvas = document.createElement('canvas')
         localCanvas.width = 480
         localCanvas.height = 320
 
+        // Perp
         const localContext = localCanvas.getContext('2d')
-
         localContext.clearRect(0, 0, 480, 320)
         localContext.drawImage(image, 0, 0)
-        localContext.font = 'bold 24px Arial'
-        //
+
+        // Highlights
         localContext.fillStyle = `rgba(200, 200, 200, 0.6)`
         localContext.fillRect(0, 0, 480, 80)
         localContext.fillStyle = `rgba(200, 200, 200, 0.8)`
         localContext.fillRect(0, 250, 480, 100)
-        //
+
+        // Text
+        localContext.font = 'bold 24px Arial'
         localContext.fillStyle = 'black'
         localContext.fillText(els['line1'].value, 20, 24)
         localContext.fillText(els['line2'].value, 20, 48)
@@ -59,6 +76,16 @@ const createIt = () => {
         localContext.fillText(els['line4'].value, 20, 272)
         localContext.font = 'bold 17px Arial'
         localContext.fillText(els['line5'].value, 20, 302)
+
+        // // Texture // Skipping because I'm not happy with how this version looks
+        // localContext.fillStyle = `rgba(255,255, 255, 0.010)`
+        // for (let nx = 0; nx < texture.length; nx++) {
+        //     for (let ny = 0; ny < texture[nx].length; ny++) {
+        //         if (texture[nx][ny] === true) {
+        //             localContext.fillRect(nx * 3, ny * 3, 5, 5)
+        //         }
+        //     }
+        // }
 
         s.gif.addFrame(localCanvas, { delay: 30 })
     })
@@ -78,15 +105,19 @@ const checkIt = () => {
 }
 
 const handleInput = () => {
+    // Clear Prep
     s.context.clearRect(0, 0, 480, 320)
+    // Background
     s.context.drawImage(s.images[0], 0, 0)
-    s.context.font = 'bold 24px Arial'
-    //
+
+    // Highlights
     s.context.fillStyle = `rgba(200, 200, 200, 0.6)`
     s.context.fillRect(0, 0, 480, 80)
     s.context.fillStyle = `rgba(200, 200, 200, 0.8)`
     s.context.fillRect(0, 250, 480, 100)
-    //
+
+    // Text
+    s.context.font = 'bold 24px Arial'
     s.context.fillStyle = 'black'
     s.context.fillText(els['line1'].value, 20, 24)
     s.context.fillText(els['line2'].value, 20, 48)
@@ -94,6 +125,19 @@ const handleInput = () => {
     s.context.fillText(els['line4'].value, 20, 272)
     s.context.font = 'bold 17px Arial'
     s.context.fillText(els['line5'].value, 20, 302)
+
+    // // Texture // Skipping for preview
+    // s.context.fillStyle = `rgba(255,255, 255, 0.02)`
+    // for (let nx = 0; nx < 480; nx += 3) {
+    //     for (let ny = 0; ny < 320; ny += 3) {
+    //         const theCheck = Math.random()
+    //         if (theCheck > 0.4) {
+    //             s.context.fillRect(nx, ny, 6, 6)
+    //         }
+    //     }
+    // }
+
+    //
 }
 
 const handleImageClick = (event) => {
