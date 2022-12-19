@@ -1,6 +1,12 @@
+/*
+ * Hi! this code is a mess. The point was to get it out
+ * fast. Refactoring hasn't happend yet
+ */
+
 const s = {
     images: [],
     loaded: 0,
+    image: 'claiton-conto-11489108',
 }
 
 const els = {}
@@ -12,6 +18,9 @@ const elNames = [
     'line3',
     'line4',
     'line5',
+    'claiton-conto-11489108',
+    'roman-odintsov-11760754',
+    'roman-odintsov-11760788',
 ]
 
 const createIt = () => {
@@ -37,8 +46,12 @@ const createIt = () => {
         localContext.clearRect(0, 0, 480, 320)
         localContext.drawImage(image, 0, 0)
         localContext.font = 'bold 24px Arial'
+        //
+        localContext.fillStyle = `rgba(200, 200, 200, 0.6)`
+        localContext.fillRect(0, 0, 480, 80)
         localContext.fillStyle = `rgba(200, 200, 200, 0.8)`
         localContext.fillRect(0, 250, 480, 100)
+        //
         localContext.fillStyle = 'black'
         localContext.fillText(els['line1'].value, 20, 24)
         localContext.fillText(els['line2'].value, 20, 48)
@@ -68,8 +81,12 @@ const handleInput = () => {
     s.context.clearRect(0, 0, 480, 320)
     s.context.drawImage(s.images[0], 0, 0)
     s.context.font = 'bold 24px Arial'
+    //
+    s.context.fillStyle = `rgba(200, 200, 200, 0.6)`
+    s.context.fillRect(0, 0, 480, 80)
     s.context.fillStyle = `rgba(200, 200, 200, 0.8)`
     s.context.fillRect(0, 250, 480, 100)
+    //
     s.context.fillStyle = 'black'
     s.context.fillText(els['line1'].value, 20, 24)
     s.context.fillText(els['line2'].value, 20, 48)
@@ -77,6 +94,18 @@ const handleInput = () => {
     s.context.fillText(els['line4'].value, 20, 272)
     s.context.font = 'bold 17px Arial'
     s.context.fillText(els['line5'].value, 20, 302)
+}
+
+const handleImageClick = (event) => {
+    console.log(event.target.id)
+    s.image = event.target.id
+    s.images = []
+    s.loaded = 0
+    for (let i = 0; i < 120; i++) {
+        s.images.push(new Image())
+        s.images[i].src = `frames/${s.image}/${i + 1}.jpg`
+        s.images[i].addEventListener('load', checkIt)
+    }
 }
 
 const init = () => {
@@ -92,12 +121,15 @@ const init = () => {
     els['line4'].addEventListener('input', handleInput)
     els['line5'].addEventListener('input', handleInput)
     els['createTrigger'].addEventListener('click', createIt)
+    els['claiton-conto-11489108'].addEventListener('click', handleImageClick)
+    els['roman-odintsov-11760754'].addEventListener('click', handleImageClick)
+    els['roman-odintsov-11760788'].addEventListener('click', handleImageClick)
 
     s.context = els['gifCanvas'].getContext('2d')
 
     for (let i = 0; i < 60; i++) {
         s.images.push(new Image())
-        s.images[i].src = `frames/claiton-conto-11489108/${i + 1}.jpg`
+        s.images[i].src = `frames/${s.image}/${i + 1}.jpg`
         s.images[i].addEventListener('load', checkIt)
     }
 }

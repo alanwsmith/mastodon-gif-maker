@@ -120,3 +120,15 @@ pre {
 p {
     margin-bottom: 18px;
 }
+
+#thumbnailWrapper {
+    max-width: 480px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 12px;
+}
+
+.thumbnail {
+    cursor: pointer;
+}
+
