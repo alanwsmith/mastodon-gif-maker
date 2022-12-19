@@ -80,7 +80,6 @@ def make_preview_gifs():
         if basename in config['files']: 
             d = config['files'][basename]
             filters = []
-#       -vf "${CROP}fps=${FPS},scale=${WIDTH}:-2:flags=lanczos,split[s0][s1];\
             filters.append(f"crop={d['width']}:{d['height']}:{d['left']}:{d['down']}")
             filters.append("fps=10")
             filters.append("scale=120:-2:flags=lanczos")

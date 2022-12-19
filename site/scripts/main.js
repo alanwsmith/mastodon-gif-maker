@@ -18,11 +18,18 @@ const elNames = [
     'line3',
     'line4',
     'line5',
+
     'an-african-elephant-covered-in-mud-11760745',
     'claiton-conto-11489108',
     'river-elephant-elephant-bathing-elephant-in-river-3958529',
     'roman-odintsov-11760754',
     'roman-odintsov-11760788',
+]
+
+const imgNames = [
+    'a-n-astronaut-taking-off-his-helmet-8474624',
+    'an-astronaut-sitting-and-looking-around-in-a-desert-8474595',
+    'astronauts-looking-around-in-a-desolate-area-8474604',
 ]
 
 const createIt = () => {
@@ -177,6 +184,12 @@ const init = () => {
         'click',
         handleImageClick
     )
+
+    imgNames.forEach((imgName) => {
+        console.log(imgName)
+        els[imgName] = document.getElementById(imgName)
+        els[imgName].addEventListener('click', handleImageClick)
+    })
 
     s.context = els['gifCanvas'].getContext('2d')
 
