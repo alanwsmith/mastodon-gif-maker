@@ -9,6 +9,15 @@ const data = JSON.parse(`{
       "start": 0,
       "width": 1036
     },
+    "a-man-dancing-on-the-street-8929221": {
+      "alt": "A man dancing on the street",
+      "down": 0,
+      "height": 784,
+      "left": 280,
+      "make": "n",
+      "start": 0,
+      "width": 1176
+    },
     "a-n-astronaut-taking-off-his-helmet-8474624": {
       "alt": "An astronaut taking off their helmet",
       "down": 330,
@@ -59,7 +68,7 @@ const data = JSON.parse(`{
       "down": 20,
       "height": 1802,
       "left": 1030,
-      "make": "y",
+      "make": "n",
       "start": 0,
       "width": 2703
     },
@@ -107,6 +116,33 @@ const data = JSON.parse(`{
       "make": "n",
       "start": 0,
       "width": 1920
+    },
+    "woman-dancing-in-neon-glow-7198484": {
+      "alt": "A woman dancing in neon glow",
+      "down": 300,
+      "height": 1440,
+      "left": 0,
+      "make": "n",
+      "start": 0,
+      "width": 2160
+    },
+    "woman-holding-skateboard-7935547": {
+      "alt": "A woman holding a skateboard",
+      "down": 0,
+      "height": 1512,
+      "left": 1310,
+      "make": "y",
+      "start": 0,
+      "width": 2268
+    },
+    "woman-stretching-6980497": {
+      "alt": "A woman stretching and wearing a mask",
+      "down": 900,
+      "height": 1440,
+      "left": 0,
+      "make": "n",
+      "start": 0,
+      "width": 2160
     }
   }
 }`)
