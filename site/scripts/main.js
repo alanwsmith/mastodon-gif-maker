@@ -77,7 +77,7 @@ const createIt = () => {
         localContext.fillText(els['line3'].value, 20, 72)
         localContext.fillText(els['line4'].value, 20, 272)
         localContext.font = 'bold 17px Arial'
-        localContext.fillText(els['line5'].value, 20, 302)
+        localContext.fillText(els['line5'].value, 80, 302)
 
         // // Texture // Skipping because I'm not happy with how this version looks
         // localContext.fillStyle = `rgba(255,255, 255, 0.010)`
