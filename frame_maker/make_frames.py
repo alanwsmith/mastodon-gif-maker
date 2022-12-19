@@ -68,6 +68,8 @@ def make_frames():
                     video,
                     '-vf', 
                     ",".join(filters),
+                    "-q:v",
+                    "3",
                     "-y",
                     output_path
                     ]
