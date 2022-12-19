@@ -60,7 +60,7 @@ const createIt = () => {
         localContext.font = 'bold 17px Arial'
         localContext.fillText(els['line5'].value, 20, 302)
 
-        s.gif.addFrame(localCanvas, { delay: 60 })
+        s.gif.addFrame(localCanvas, { delay: 30 })
     })
 
     s.gif.on('finished', function (blob) {
@@ -127,7 +127,7 @@ const init = () => {
 
     s.context = els['gifCanvas'].getContext('2d')
 
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 120; i++) {
         s.images.push(new Image())
         s.images[i].src = `frames/${s.image}/${i + 1}.jpg`
         s.images[i].addEventListener('load', checkIt)
