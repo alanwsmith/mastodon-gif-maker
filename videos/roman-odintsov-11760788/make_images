@@ -3,7 +3,7 @@
 CROP_WIDTH=2126
 CROP_HEIGHT=1600
 CROP_LEFT=0
-CROP_DOWN=1060
+CROP_DOWN=1400
 WIDTH=480
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
