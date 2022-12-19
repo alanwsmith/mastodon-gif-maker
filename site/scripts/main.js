@@ -18,18 +18,19 @@ const elNames = [
     'line3',
     'line4',
     'line5',
+    'thumbnailWrapper',
 
-    'an-african-elephant-covered-in-mud-11760745',
-    'claiton-conto-11489108',
-    'river-elephant-elephant-bathing-elephant-in-river-3958529',
-    'roman-odintsov-11760754',
-    'roman-odintsov-11760788',
+    // 'an-african-elephant-covered-in-mud-11760745',
+    // 'claiton-conto-11489108',
+    // 'river-elephant-elephant-bathing-elephant-in-river-3958529',
+    // 'roman-odintsov-11760754',
+    // 'roman-odintsov-11760788',
 ]
 
 const imgNames = [
-    'a-n-astronaut-taking-off-his-helmet-8474624',
-    'an-astronaut-sitting-and-looking-around-in-a-desert-8474595',
-    'astronauts-looking-around-in-a-desolate-area-8474604',
+    // 'a-n-astronaut-taking-off-his-helmet-8474624',
+    // 'an-astronaut-sitting-and-looking-around-in-a-desert-8474595',
+    // 'astronauts-looking-around-in-a-desolate-area-8474604',
 ]
 
 const createIt = () => {
@@ -161,6 +162,15 @@ const handleImageClick = (event) => {
     }
 }
 
+const makeEl = (name, options) => {
+    console.log(`Making: ${name}`)
+    const newEl = document.createElement(name)
+    for (let thing in options) {
+        newEl[thing] = options[thing]
+    }
+    return newEl
+}
+
 const init = () => {
     console.log(`Initializing: ${new Date().getTime()}`)
 
@@ -168,28 +178,46 @@ const init = () => {
         els[el] = document.getElementById(el)
     })
 
+    for (let file in data.files) {
+        console.log(`Setting up: ${file}`)
+        // els[file] = document.getElementById(file)
+        // els[file].addEventListener('click', handleImageClick)
+        const newImgDiv = makeEl('div')
+        const newImg = makeEl('img', {
+            id: file,
+            src: `/frames/${file}/_example.gif`,
+            alt: data.files[file].alt,
+            width: '120',
+        })
+        newImg.classList.add('thumbnail')
+        newImg.addEventListener('click', handleImageClick)
+
+        newImgDiv.appendChild(newImg)
+        els['thumbnailWrapper'].appendChild(newImgDiv)
+    }
+
     els['line1'].addEventListener('input', handleInput)
     els['line2'].addEventListener('input', handleInput)
     els['line3'].addEventListener('input', handleInput)
     els['line4'].addEventListener('input', handleInput)
     els['line5'].addEventListener('input', handleInput)
     els['createTrigger'].addEventListener('click', createIt)
-    els['claiton-conto-11489108'].addEventListener('click', handleImageClick)
-    els[
-        'river-elephant-elephant-bathing-elephant-in-river-3958529'
-    ].addEventListener('click', handleImageClick)
-    els['roman-odintsov-11760754'].addEventListener('click', handleImageClick)
-    els['roman-odintsov-11760788'].addEventListener('click', handleImageClick)
-    els['an-african-elephant-covered-in-mud-11760745'].addEventListener(
-        'click',
-        handleImageClick
-    )
 
-    imgNames.forEach((imgName) => {
-        console.log(imgName)
-        els[imgName] = document.getElementById(imgName)
-        els[imgName].addEventListener('click', handleImageClick)
-    })
+    // els['claiton-conto-11489108'].addEventListener('click', handleImageClick)
+    // els[
+    //     'river-elephant-elephant-bathing-elephant-in-river-3958529'
+    // ].addEventListener('click', handleImageClick)
+    // els['roman-odintsov-11760754'].addEventListener('click', handleImageClick)
+    // els['roman-odintsov-11760788'].addEventListener('click', handleImageClick)
+    // els['an-african-elephant-covered-in-mud-11760745'].addEventListener(
+    //     'click',
+    //     handleImageClick
+    // )
+    // imgNames.forEach((imgName) => {
+    //     console.log(imgName)
+    //     els[imgName] = document.getElementById(imgName)
+    //     els[imgName].addEventListener('click', handleImageClick)
+    // })
 
     s.context = els['gifCanvas'].getContext('2d')
 
