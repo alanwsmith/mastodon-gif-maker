@@ -34,23 +34,39 @@
         <header></header>
         <main>
             <h1>Mastodon GIF Maker</h1>
-            <p>Hi there!</p>
+            <h2>Welcome In</h2>
+            <p>Hi there! I'm Alan and I'm glad you stopped by.</p>
             <p>
-                I'm Alan and I was disappointed to learn Twitter has started
-                prohibiting links to other social networks. I want to let me
-                followers know I've moved to Mastodon, but I don't want to run
-                afoul of their guidelines. So, I setup this GIF maker that will
-                let me send the message. You're welcome to use it too.
+                I was disappointed to learn Twitter is prohibiting links to
+                other social networks. I want to let my followers know I've
+                moved to Mastodon, but I don't want to run afoul of their rules.
+                So, I setup this GIF maker that will let me send the message.
+                You're welcome to use it too.
+            </p>
+            <p>
+                I've provided some boilerplate text. You're welcome to use it,
+                change it up, or junk it completely and do your own thing. When
+                you've got the words right, click the &quot;Create it&quot;
+                button and it'll to do just that. (And make sure to read the
+                notes scattered around, I just built this today and it's still
+                clunky.)
             </p>
 
+            <h4>Warning</h4>
             <p>
-                Enter your message then click &quot;Create it&quot; to do just
-                that. (And make sure to read the notes, this is brand new and
-                still a little clunky. And, of course, Twitter may decide they
-                don't like this so use at your own risk.)
+                Based off the increasing frequency of account suspensions I
+                would not be surpised if the rules of engagement are changed
+                again to prohibit GIFs. I'm fine with that and am using this
+                with the idea that it could very well be the last thing I do on
+                Twitter. I'm fine with that. I want to make sure the people I've
+                connected with know where I've gone before I disappear
+                completely.
             </p>
+            <p>Said another way: Use at your own risk</p>
 
-            <h4>Pick A Background GIF</h4>
+            <h2>Make Your GIF</h2>
+
+            <h4>1. Pick A Background GIF</h4>
 
             <div id="thumbnailWrapper">
                 <div>
@@ -104,7 +120,11 @@
                 </div>
             </div>
 
-            <h4>Update Your Text</h4>
+            <h4>2. Update Your Text</h4>
+            <p>
+                Change this as much as you'd like and you can preview it a
+                little further below.
+            </p>
 
             <label for="line1">Line 1</label>
             <input
@@ -147,10 +167,16 @@
                 placeholder=""
             /><br />
 
-            <h4>Check Your Layout (it will animate in the following step)</h4>
+            <h4>3. Check Your Layout</h4>
+            <p>
+                This preview doesn't animate yet. You can get an idea from the
+                thumbnails further above. Or, hit &quot;Create It&quot; as many
+                times as you'd like.
+            </p>
+
             <canvas id="gifCanvas" width="480" height="320"></canvas>
 
-            <h4>And Create Your GIF!</h4>
+            <h4>4. And Create Your GIF!</h4>
             <p>
                 <button id="createTrigger">Create It</button> (NOTE: the image
                 is generated in a pop-up window which your browser will probably
@@ -202,10 +228,17 @@
                 </li>
                 <li>
                     <strike>
-                        Verify the contrast between the text and background is
-                        high enough</strike
-                    >
+                        Verify the contrast between the text and background
+                        meets
+                        <a
+                            href="https://www.w3.org/TR/WCAG21/#contrast-enhanced"
+                            >WCAG 2 Contrast (Enhanced) Guidelines</a
+                        >
+                    </strike>
                 </li>
+                <li>Make the preview animate</li>
+                <li>Add on Open Graph Image</li>
+                <li>Add note about gif.js library used</li>
                 <li>MORE GIF OPTIONS!</li>
                 <li>See about auto assigning a name for saving</li>
                 <li>Show more details about the pop-up blockers</li>
