@@ -73,11 +73,38 @@ def make_frames():
                     ]
             subprocess.run(cmd)
 
+def make_preview_gifs():
+    for video in videos:
+        basename = os.path.basename(video).split('.')[0]
+        output_path = os.path.join(output_root, basename, "_example.gif")
+        if basename in config['files']: 
+            d = config['files'][basename]
+            filters = []
+#       -vf "${CROP}fps=${FPS},scale=${WIDTH}:-2:flags=lanczos,split[s0][s1];\
+            filters.append(f"crop={d['width']}:{d['height']}:{d['left']}:{d['down']}")
+            filters.append("fps=10")
+            filters.append("scale=120:-2:flags=lanczos")
+            filters.append("split[s0][s1];[s0]palettegen=max_colors=64:reserve_transparent=0[p];[s1][p]paletteuse")
+            cmd = [
+                    "ffmpeg", 
+                    "-ss", 
+                    "0",
+                    "-t",
+                    "5",
+                    "-i", 
+                    video,
+                    '-vf', 
+                    ",".join(filters),
+                    "-y",
+                    output_path
+                    ]
+            subprocess.run(cmd)
+
+
 if __name__ == "__main__":
     make_dirs()
     make_thumbnails()
     make_frames()
-
-
+    make_preview_gifs()
 
 

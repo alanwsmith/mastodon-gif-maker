@@ -42,7 +42,7 @@ files:
     down: 178
     start: 0
   roman-odintsov-11760754:
-    make: 'y'
+    make: 'n'
     width: 2160
     height: 1440
     left: 0
