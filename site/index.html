@@ -44,14 +44,14 @@
                 I built this yesterday when Twitter was prohibiting links to
                 other social networks. The idea was to provide GIFs so folks
                 could use them instead of links which wouldn't get through.
-                Seems like that's no longer necessary, but I'm having fun with
-                this so I'm going to keep working on it. Plus, I have this
-                amusing vision of &quot;I'm on Mastodon&quot; GIFs taking over
-                Twitter.
+                Seems that's no longer necessary, but I'm having fun. I'm gonna
+                keep working on it. Plus, I have this amusing vision of
+                &quot;I'm on Mastodon&quot; GIFs taking over Twitter.
             </p>
 
             <h2>Make Your GIF</h2>
-            <p>Here's the five steps for making your own GIF for Twitter</p>
+
+            <p>Here's the four steps for making your own GIF for Twitter</p>
 
             <h4>1. Pick A Background GIF</h4>
 
@@ -139,17 +139,15 @@
                 -->
             </div>
             <p>
-                NOTE: I'm adding more GIFs, if you have art that's open source
-                or that you own and are willing to share, I'd love to see about
+                (I'm adding more GIFs, if you have art that's open source or
+                that you own and are willing to share, I'd love to see about
                 inclding it.
-                <a href="https://hachyderm.io/@TheIdOfAlan">Hit me up</a>.
+                <a href="https://hachyderm.io/@TheIdOfAlan">Hit me up</a>.)
             </p>
 
             <h4>2. Update Your Text</h4>
-            <p>
-                Change this as much as you'd like and you can preview it a
-                little further below.
-            </p>
+
+            <canvas id="gifCanvas" width="480" height="320"></canvas>
 
             <label for="line1">Line 1</label>
             <input
@@ -164,6 +162,13 @@
 
             <label for="line3">Line 3</label>
             <input type="text" id="line3" size="40" value="" /><br />
+            <br />
+            <p>
+                <em
+                    >I haven't wired this preview up to animate yet. It will
+                    when you create the final version</em
+                >
+            </p>
 
             <!--
             <label for="line4">Line 4</label>
@@ -184,26 +189,13 @@
             /><br />
             -->
 
-            <h4>3. Check Your Layout</h4>
+            <h4>3. And Create Your GIF!</h4>
             <p>
-                This preview doesn't animate yet. You can get an idea from the
-                thumbnails further above. Or, hit &quot;Create It&quot; as many
-                times as you'd like.
-            </p>
-
-            <canvas id="gifCanvas" width="480" height="320"></canvas>
-
-            <p>
-                NOTE: The text for line 5 is shifted to the right to accommodate
-                an overlay icon that shows up in the Twitter web page interface.
-            </p>
-
-            <h4>4. And Create Your GIF!</h4>
-            <p>
-                <button id="createTrigger">Create It</button> (NOTE 1: It can
-                take a few seconds to generate - NOTE 2: The image is generated
-                in a pop-up window which your browser will probably block the
-                first time. Give it permission, try again and it should work. )
+                <button id="createTrigger">Create It</button> <br />(NOTE 1: It
+                can take a few seconds to generate - NOTE 2: The image is
+                generated in a pop-up window which your browser will probably
+                block the first time. Give it permission, try again and it
+                should work. )
             </p>
             <p>
                 Save the image from the pop-up window and then you can post it
@@ -211,7 +203,7 @@
                 including `.gif` at the end.)
             </p>
 
-            <h4>5. Post It</h4>
+            <h4>4. Post It</h4>
 
             <p>
                 That's it for making the GIFs. After you download it, you can
