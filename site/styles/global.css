@@ -125,10 +125,12 @@ p {
     max-width: 480px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 12px;
     margin-bottom: 12px;
 }
 
 .thumbnail {
+    padding-top: 10px;
     cursor: pointer;
 }
 

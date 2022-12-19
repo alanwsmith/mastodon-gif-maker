@@ -18,7 +18,9 @@ const elNames = [
     'line3',
     'line4',
     'line5',
+    'an-african-elephant-covered-in-mud-11760745',
     'claiton-conto-11489108',
+    'river-elephant-elephant-bathing-elephant-in-river-3958529',
     'roman-odintsov-11760754',
     'roman-odintsov-11760788',
 ]
@@ -87,7 +89,7 @@ const createIt = () => {
         //     }
         // }
 
-        s.gif.addFrame(localCanvas, { delay: 30 })
+        s.gif.addFrame(localCanvas, { delay: 28 })
     })
 
     s.gif.on('finished', function (blob) {
@@ -166,8 +168,13 @@ const init = () => {
     els['line5'].addEventListener('input', handleInput)
     els['createTrigger'].addEventListener('click', createIt)
     els['claiton-conto-11489108'].addEventListener('click', handleImageClick)
+    els['river-elephant-elephant-bathing-elephant-in-river-3958529'].addEventListener('click', handleImageClick)
     els['roman-odintsov-11760754'].addEventListener('click', handleImageClick)
     els['roman-odintsov-11760788'].addEventListener('click', handleImageClick)
+    els['an-african-elephant-covered-in-mud-11760745'].addEventListener(
+        'click',
+        handleImageClick
+    )
 
     s.context = els['gifCanvas'].getContext('2d')
 
