@@ -10,8 +10,8 @@ html,
 body {
     height: 100%;
     font-family: sans-serif;
-    background-color: hsla(233, 20%, 19%, 1);
-    color: hsla(32, 26%, 44%, 1);
+    background-color: #182747;
+    color: #d8d8d8;
 }
 */ body {
     line-height: 1.5;
@@ -31,7 +31,11 @@ textarea,
 select {
     font: inherit;
 }
-p,
+
+p {
+    overflow-wrap: break-word;
+}
+
 h1,
 h2,
 h3,
@@ -39,7 +43,7 @@ h4,
 h5,
 h6 {
     overflow-wrap: break-word;
-    color: hsla(32, 26%, 44%, 1);
+    color: #eeeeee;
 }
 
 h1 {
