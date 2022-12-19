@@ -16,8 +16,8 @@ const elNames = [
     'line1',
     'line2',
     'line3',
-    'line4',
-    'line5',
+    // 'line4',
+    // 'line5',
     'thumbnailWrapper',
 
     // 'an-african-elephant-covered-in-mud-11760745',
@@ -74,18 +74,18 @@ const createIt = () => {
         // Highlights
         localContext.fillStyle = `rgba(200, 200, 200, 0.6)`
         localContext.fillRect(0, 0, 480, 80)
-        localContext.fillStyle = `rgba(200, 200, 200, 0.8)`
-        localContext.fillRect(0, 250, 480, 100)
+        // localContext.fillStyle = `rgba(200, 200, 200, 0.8)`
+        // localContext.fillRect(0, 250, 480, 100)
 
         // Text
         localContext.font = 'bold 24px Arial'
         localContext.fillStyle = 'black'
         localContext.fillText(els['line1'].value, 20, 24)
+        localContext.font = 'bold 17px Arial'
         localContext.fillText(els['line2'].value, 20, 48)
         localContext.fillText(els['line3'].value, 20, 72)
-        localContext.fillText(els['line4'].value, 20, 272)
-        localContext.font = 'bold 17px Arial'
-        localContext.fillText(els['line5'].value, 80, 302)
+        // localContext.fillText(els['line4'].value, 20, 272)
+        // localContext.fillText(els['line5'].value, 80, 302)
 
         // // Texture // Skipping because I'm not happy with how this version looks
         // localContext.fillStyle = `rgba(255,255, 255, 0.010)`
@@ -123,18 +123,18 @@ const handleInput = () => {
     // Highlights
     s.context.fillStyle = `rgba(200, 200, 200, 0.6)`
     s.context.fillRect(0, 0, 480, 80)
-    s.context.fillStyle = `rgba(200, 200, 200, 0.8)`
-    s.context.fillRect(0, 250, 480, 100)
+    // s.context.fillStyle = `rgba(200, 200, 200, 0.8)`
+    // s.context.fillRect(0, 250, 480, 100)
 
     // Text
     s.context.font = 'bold 24px Arial'
     s.context.fillStyle = 'black'
     s.context.fillText(els['line1'].value, 20, 24)
+    s.context.font = 'bold 17px Arial'
     s.context.fillText(els['line2'].value, 20, 48)
     s.context.fillText(els['line3'].value, 20, 72)
-    s.context.fillText(els['line4'].value, 20, 272)
-    s.context.font = 'bold 17px Arial'
-    s.context.fillText(els['line5'].value, 80, 302)
+    // s.context.fillText(els['line4'].value, 20, 272)
+    // s.context.fillText(els['line5'].value, 80, 302)
 
     // // Texture // Skipping for preview
     // s.context.fillStyle = `rgba(255,255, 255, 0.02)`
@@ -163,7 +163,7 @@ const handleImageClick = (event) => {
 }
 
 const makeEl = (name, options) => {
-    console.log(`Making: ${name}`)
+    // console.log(`Making: ${name}`)
     const newEl = document.createElement(name)
     for (let thing in options) {
         newEl[thing] = options[thing]
@@ -199,8 +199,8 @@ const init = () => {
     els['line1'].addEventListener('input', handleInput)
     els['line2'].addEventListener('input', handleInput)
     els['line3'].addEventListener('input', handleInput)
-    els['line4'].addEventListener('input', handleInput)
-    els['line5'].addEventListener('input', handleInput)
+    // jels['line4'].addEventListener('input', handleInput)
+    // els['line5'].addEventListener('input', handleInput)
     els['createTrigger'].addEventListener('click', createIt)
 
     // els['claiton-conto-11489108'].addEventListener('click', handleImageClick)
