@@ -187,9 +187,9 @@ const init = () => {
             id: file,
             src: `/frames/${file}/_example.gif`,
             alt: data.files[file].alt,
-            class: 'thumbnail',
             width: '120',
         })
+        newImg.classList.add('thumbnail')
         newImg.addEventListener('click', handleImageClick)
 
         newImgDiv.appendChild(newImg)
